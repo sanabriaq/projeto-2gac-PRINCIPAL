@@ -1,0 +1,719 @@
+/* ============================================ */
+/* SISTEMA DE REFEIÇÕES - 2º GAC ITU/SP        */
+/* Arquivo: style.css                          */
+/* Linguagem: CSS                              */
+/* ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a1f0a 0%, #1a3a1a 50%, #0a1f0a 100%);
+  font-family: 'Rajdhani', 'Arial Narrow', sans-serif;
+  color: #e8e0c8;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== FUNDO COM PADRÃO ===== */
+.bg-pattern {
+  position: fixed;
+  inset: 0;
+  background-color: blue;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 0;
+}
+
+/* ===== TOAST (mensagens) ===== */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid;
+  z-index: 1000;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 90%;
+}
+
+.toast.sucesso {
+  background: #2d5016;
+  border-color: #4a7c2a;
+}
+
+.toast.erro {
+  background: #7a1f1f;
+  border-color: #a83333;
+}
+
+/* ===== CONTAINER DE AUTENTICAÇÃO ===== */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(10, 12, 31, 0.85);
+  backdrop-filter: blur(10px);
+  border: 2px solid #5a4509;
+  border-radius: 12px;
+  padding: 36px 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(212, 160, 23, 0.2);
+}
+
+.emblema-hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.emblema-small {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.brasao {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.brasao-small {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* ===== TIPOGRAFIA ===== */
+.titulo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-align: center;
+  color: #eeeeee;
+  margin: 0 0 4px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.titulo-small {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #eeeeee;
+  margin: 0 0 4px;
+}
+
+.subtitulo {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #eeeeee;
+  margin: 0 0 20px;
+  font-weight: 600;
+}
+
+.divisor {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4a017, transparent);
+  margin: 20px 0;
+}
+
+.divisor-pequeno {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #f5f5f5;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  justify-content: center;
+}
+
+/* ===== FORMULÁRIO ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+.input, .select {
+  background: rgba(255, 255, 255, 0.781);
+  border: 1px solid #d4a017;
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: #0a0a0a;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  outline: none;
+  font-family: inherit;
+  transition: border 0.2s;
+}
+
+.input:focus, .select:focus {
+  border-color: #d4a017;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.preview {
+  background: rgba(212, 160, 23, 0.1);
+  border: 1px dashed #d4a017;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #d4a017;
+  letter-spacing: 1px;
+}
+
+/* ===== BATERIAS ===== */
+.bateria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.bateria-btn {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid #d4a017;
+  border-radius: 6px;
+  padding: 10px;
+  color: #ebebeb;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.bateria-btn:hover {
+  border-color: #d4a017;
+}
+
+.bateria-btn.ativo {
+  background: #d4a017;
+  color: #0a1f0a;
+  border-color: #d4a017;
+  box-shadow: 0 0 12px rgba(212, 160, 23, 0.4);
+}
+
+/* ===== BOTÕES ===== */
+.btn-primary {
+  background: linear-gradient(180deg, #d4a017 0%, #d4a017 100%);
+  border: none;
+  border-radius: 6px;
+  padding: 14px 20px;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(212, 160, 23, 0.3);
+  transition: transform 0.1s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #d4a017;
+  border-radius: 6px;
+  padding: 12px 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-secondary:hover {
+  background: #d4a017;
+  color: black;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  padding: 12px;
+  color: #fafafa;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 8px;
+}
+
+.btn-ghost:hover {
+  color: #d4a017;
+}
+
+.seta, .check {
+  font-size: 18px;
+}
+
+.rodape {
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin-top: 24px;
+  font-weight: 600;
+}
+
+/* ===== APP CONTAINER ===== */
+.app-container {
+   background: rgba(10, 12, 31, 0.85);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid #3a5a1a;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-brasao {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.header-titulo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #d4a017;
+}
+
+.header-sub {
+  font-size: 18px;
+  color: #a89968;
+  letter-spacing: 1.5px;
+  margin-top: 2px;
+}
+
+.btn-logout {
+  background: rgba(122, 31, 31, 0.3);
+  border: 1px solid #7a1f1f;
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #e8a0a0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-logout:hover {
+  background: rgba(122, 31, 31, 0.5);
+}
+
+/* ===== CARD USUÁRIO ===== */
+.card-usuario {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.1), rgba(74, 124, 42, 0.1));
+  border: 1px solid #5a4509;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.avatar-usuario {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #d4a017;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.usuario-info {
+  flex: 1;
+}
+
+.boas-vindas {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #a89968;
+  font-weight: 700;
+}
+
+.nome-usuario {
+  font-size: 18px;
+  font-weight: 800;
+  color: #e8e0c8;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.bateria-usuario {
+  font-size: 15px;
+  color: #d4a017;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+}
+
+/* ===== MENU ===== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.menu-card {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid #3a5a1a;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  color: #e8e0c8;
+  transition: all 0.2s;
+}
+
+.menu-card:hover {
+  border-color: #d4a017;
+  background: rgba(212, 160, 23, 0.05);
+}
+
+.menu-icon {
+  font-size: 36px;
+}
+
+.menu-titulo {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.menu-desc {
+  font-size: 14px;
+  color: #d4a017;
+  letter-spacing: 1px;
+}
+
+/* ===== PRÓXIMAS REFEIÇÕES ===== */
+.proximas-refeicoes {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid #3a5a1a;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.section-titulo {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #f5f5f5;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vazio {
+  text-align: center;
+  color: #d4a017;
+  font-size: 14px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.proxima-card {
+  background: rgba(212, 160, 23, 0.06);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.proxima-data {
+  font-size: 14px;
+  font-weight: 800;
+  color: #d4a017;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.proxima-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag-refeicao {
+  background: rgba(74, 124, 42, 0.3);
+  border: 1px solid #4a7c2a;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #c8e0a8;
+}
+
+/* ===== AGENDAR ===== */
+.form-agendar {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid #3a5a1a;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.refeicoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.refeicao-card {
+  background: rgba(0,0,0,0.4);
+  border: 2px solid #3a5a1a;
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  transition: all 0.2s;
+  color: #e8e0c8;
+}
+
+.refeicao-card:hover {
+  border-color: #d4a017;
+}
+
+.refeicao-card.ativo {
+  background: linear-gradient(180deg, #d4a017 0%, #9c7a0e 100%);
+  border-color: #d4a017;
+  color: #0a1f0a;
+  box-shadow: 0 0 20px rgba(212, 160, 23, 0.4);
+}
+
+.refeicao-icon {
+  font-size: 32px;
+}
+
+.refeicao-nome {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.refeicao-horario {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.check-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #0a1f0a;
+  color: #d4a017;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.refeicao-card.ativo .check-badge {
+  color: #fde68a;
+}
+
+/* ===== HISTÓRICO ===== */
+.lista-agendamentos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.agendamento-card {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid #3a5a1a;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.agendamento-card.passado {
+  opacity: 0.6;
+}
+
+.agendamento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.agendamento-data {
+  font-size: 18px;
+  font-weight: 800;
+  color: #d4a017;
+  letter-spacing: 1px;
+}
+
+.agendamento-status {
+  font-size: 11px;
+  color: #a89968;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.btn-delete {
+  background: rgba(122, 31, 31, 0.3);
+  border: 1px solid #7a1f1f;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e8a0a0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-delete:hover {
+  background: rgba(122, 31, 31, 0.6);
+}
+
+.agendamento-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.refeicao-item {
+  background: rgba(74, 124, 42, 0.2);
+  border: 1px solid #4a7c2a;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #c8e0a8;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-brasao {
+    width: 45px;
+    height: 45px;
+  }
+}

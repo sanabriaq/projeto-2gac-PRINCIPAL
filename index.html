@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2º GAC - Sistema de Refeições</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fundo com padrão militar -->
+  <div class="bg-pattern"></div>
+
+  <!-- Mensagens flutuantes -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- TELA DE LOGIN-->
+  <div id="tela-login" class="tela auth-container">
+    <div class="auth-card">
+      <div class="emblema-hero">
+        <img src="img/2_GAC.png" alt="Brasão 2º GAC" class="brasao">
+      </div>
+      <h1 class="titulo">SISTEMA DE REFEIÇÕES</h1>
+      <p class="subtitulo">2º GRUPO DE ARTILHARIA DE CAMPANHA</p>
+      <div class="divisor"></div>
+
+      <div class="form">
+        <label class="label">IDENTIFICAÇÃO MILITAR</label>
+        <input type="text" id="input-login" class="input" placeholder="P/G NOME DE GUERRA">
+
+        <button class="btn-primary" onclick="fazerLogin()">
+          ENTRAR <span class="seta"></span>
+        </button>
+
+        <div class="divisor-pequeno"><span>OU</span></div>
+
+        <button class="btn-secondary" onclick="mostrarTela('tela-cadastro')">
+          CADASTRAR NOVO MILITAR
+        </button>
+      </div>
+
+      <div class="rodape">ITU - SÃO PAULO • EXÉRCITO BRASILEIRO</div>
+    </div>
+  </div>
+
+  <!-- TELA DE CADASTRO -->
+  <div id="tela-cadastro" class="tela auth-container hidden">
+    <div class="auth-card">
+      <div class="emblema-small">
+        <img src="img/2_GAC.png" alt="Brasão 2º GAC" class="brasao-small">
+      </div>
+      <h1 class="titulo-small">CADASTRO DE MILITAR</h1>
+      <div class="divisor"></div>
+
+      <div class="form">
+        <label class="label">POSTO / GRADUAÇÃO</label>
+        <select id="cadastro-posto" class="select">
+          <option value="SD EV">SD EV</option>
+          <option value="SD EP">SD EP</option>
+          <option value="CB">CB</option>
+          <option value="3º SGT">3º SGT</option>
+          <option value="2º SGT">2º SGT</option>
+          <option value="1º SGT">1º SGT</option>
+          <option value="ST">ST</option>
+          <option value="ASP">ASP</option>
+          <option value="2º TEN">2º TEN</option>
+          <option value="1º TEN">1º TEN</option>
+          <option value="CAP">CAP</option>
+          <option value="MAJ">MAJ</option>
+          <option value="TC">TC</option>
+        </select>
+
+        <label class="label">BATERIA</label>
+        <div class="bateria-grid">
+          <button type="button" class="bateria-btn ativo" data-bateria="1ª BO" onclick="selecionarBateria('1ª BO')">1ª BO</button>
+          <button type="button" class="bateria-btn" data-bateria="2ª BO" onclick="selecionarBateria('2ª BO')">2ª BO</button>
+          <button type="button" class="bateria-btn" data-bateria="3ª BM" onclick="selecionarBateria('3ª BM')">3ª BM</button>
+          <button type="button" class="bateria-btn" data-bateria="BC" onclick="selecionarBateria('BC')">BC</button>
+        </div>
+
+        <label class="label">NOME DE GUERRA</label>
+        <input type="text" id="cadastro-nome" class="input" placeholder="Ex: SANTOS" oninput="atualizarPreview()">
+        <div id="preview-identificacao" class="preview hidden"></div>
+
+        <button class="btn-primary" onclick="fazerCadastro()">
+          CONFIRMAR CADASTRO <span class="check"></span>
+        </button>
+        <button class="btn-ghost" onclick="mostrarTela('tela-login')">
+          VOLTAR AO LOGIN
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- DASHBOARD                                    -->
+  <!-- ============================================ -->
+  <div id="tela-dashboard" class="tela app-container hidden">
+    <header class="header">
+      <div class="header-left">
+        <img src="img/2_GAC.png" alt="Brasão" class="header-brasao">
+        <div>
+          <div class="header-titulo">2º GAC ITU - SP</div>
+          <div class="header-sub">Sistema de Refeições</div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="logout()">
+        <span>↩</span> SAIR
+      </button>
+    </header>
+
+    <div class="card-usuario">
+      <div class="avatar-usuario">
+        <span class="avatar-icon">👤</span>
+      </div>
+      <div class="usuario-info">
+        <div class="boas-vindas">BEM-VINDO</div>
+        <div id="usuario-id" class="nome-usuario"></div>
+        <div id="usuario-bateria" class="bateria-usuario"></div>
+      </div>
+    </div>
+
+    <div class="menu-grid">
+      <button class="menu-card" onclick="abrirAgendar()">
+        <div class="menu-icon">📅</div>
+        <div class="menu-titulo">AGENDAR REFEIÇÃO</div>
+        <div class="menu-desc">Marcar refeições para um dia</div>
+      </button>
+
+      <button class="menu-card" onclick="mostrarTela('tela-historico'); carregarHistorico();">
+        <div class="menu-icon">🕐</div>
+        <div class="menu-titulo">MEUS AGENDAMENTOS</div>
+        <div id="contador-agendamentos" class="menu-desc">0 agendamento(s)</div>
+      </button>
+    </div>
+
+    <div class="proximas-refeicoes">
+      <div class="section-titulo">
+        <span>🍽️</span> PRÓXIMAS REFEIÇÕES
+      </div>
+      <div id="lista-proximas"></div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- TELA DE AGENDAR                              -->
+  <!-- ============================================ -->
+  <div id="tela-agendar" class="tela app-container hidden">
+    <header class="header">
+      <div class="header-left">
+        <img src="img/2_GAC.png" alt="Brasão" class="header-brasao">
+        <div>
+          <div class="header-titulo">AGENDAR REFEIÇÃO</div>
+          <div id="header-agendar-sub" class="header-sub"></div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="mostrarTela('tela-dashboard'); carregarDashboard();">
+        <span>✕</span> VOLTAR
+      </button>
+    </header>
+
+    <div class="form-agendar">
+      <label class="label">DATA DA REFEIÇÃO</label>
+      <input type="date" id="agendar-data" class="input">
+
+      <label class="label" style="margin-top: 24px;">SELECIONE AS REFEIÇÕES</label>
+      <div class="refeicoes-grid">
+        <button class="refeicao-card" data-refeicao="cafe" onclick="toggleRefeicao('cafe')">
+          <div class="refeicao-icon">☕</div>
+          <div class="refeicao-nome">Café da Manhã</div>
+          <div class="refeicao-horario">06:00 - 07:30</div>
+          <div class="check-badge hidden">✓</div>
+        </button>
+        <button class="refeicao-card" data-refeicao="almoco" onclick="toggleRefeicao('almoco')">
+          <div class="refeicao-icon">🍽️</div>
+          <div class="refeicao-nome">Almoço</div>
+          <div class="refeicao-horario">11:30 - 13:00</div>
+          <div class="check-badge hidden">✓</div>
+        </button>
+        <button class="refeicao-card" data-refeicao="janta" onclick="toggleRefeicao('janta')">
+          <div class="refeicao-icon">🌅</div>
+          <div class="refeicao-nome">Janta</div>
+          <div class="refeicao-horario">17:30 - 19:00</div>
+          <div class="check-badge hidden">✓</div>
+        </button>
+        <button class="refeicao-card" data-refeicao="ceia" onclick="toggleRefeicao('ceia')">
+          <div class="refeicao-icon">🌙</div>
+          <div class="refeicao-nome">Ceia</div>
+          <div class="refeicao-horario">21:00 - 22:00</div>
+          <div class="check-badge hidden">✓</div>
+        </button>
+      </div>
+
+      <button class="btn-primary" style="margin-top: 28px;" onclick="salvarAgendamento()">
+        CONFIRMAR AGENDAMENTO <span class="check"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- TELA DE HISTÓRICO                            -->
+  <!-- ============================================ -->
+  <div id="tela-historico" class="tela app-container hidden">
+    <header class="header">
+      <div class="header-left">
+        <img src="img/2_GAC.png" alt="Brasão" class="header-brasao">
+        <div>
+          <div class="header-titulo">MEUS AGENDAMENTOS</div>
+          <div id="header-historico-sub" class="header-sub"></div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="mostrarTela('tela-dashboard'); carregarDashboard();">
+        <span>✕</span> VOLTAR
+      </button>
+    </header>
+
+    <div id="conteudo-historico"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
