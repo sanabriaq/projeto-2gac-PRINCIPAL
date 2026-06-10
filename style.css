@@ -1,9 +1,3 @@
-/* ============================================ */
-/* SISTEMA DE REFEIÇÕES - 2º GAC ITU/SP        */
-/* Arquivo: style.css                          */
-/* Linguagem: CSS                              */
-/* ============================================ */
-
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +16,7 @@ body {
   display: none !important;
 }
 
-/* ===== FUNDO COM PADRÃO ===== */
+/* FUNDO COM PADRÃO  */
 .bg-pattern {
   position: fixed;
   inset: 0;
@@ -32,7 +26,7 @@ body {
   z-index: 0;
 }
 
-/* ===== TOAST (mensagens) ===== */
+/*  TOAST (mensagens)  */
 .toast {
   position: fixed;
   top: 20px;
@@ -63,7 +57,7 @@ body {
   border-color: #a83333;
 }
 
-/* ===== CONTAINER DE AUTENTICAÇÃO ===== */
+/*  CONTAINER DE AUTENTICAÇÃO  */
 .auth-container {
   min-height: 100vh;
   display: flex;
@@ -109,7 +103,7 @@ body {
   object-fit: contain;
 }
 
-/* ===== TIPOGRAFIA ===== */
+/*  TIPOGRAFIA  */
 .titulo {
   font-size: 22px;
   font-weight: 800;
@@ -155,7 +149,7 @@ body {
   justify-content: center;
 }
 
-/* ===== FORMULÁRIO ===== */
+/*  FORMULÁRIO  */
 .form {
   display: flex;
   flex-direction: column;
@@ -203,7 +197,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* ===== BATERIAS ===== */
+/*  BATERIAS  */
 .bateria-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -312,7 +306,7 @@ body {
   font-weight: 600;
 }
 
-/* ===== APP CONTAINER ===== */
+/*  APP CONTAINER  */
 .app-container {
    background: rgba(10, 12, 31, 0.85);
   max-width: 720px;
@@ -380,7 +374,7 @@ body {
   background: rgba(122, 31, 31, 0.5);
 }
 
-/* ===== CARD USUÁRIO ===== */
+/*  CARD USUÁRIO  */
 .card-usuario {
   display: flex;
   align-items: center;
@@ -431,7 +425,7 @@ body {
   margin-top: 4px;
 }
 
-/* ===== MENU ===== */
+/*  MENU  */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -478,7 +472,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* ===== PRÓXIMAS REFEIÇÕES ===== */
+/*  PRÓXIMAS REFEIÇÕES  */
 .proximas-refeicoes {
   background: rgba(0,0,0,0.3);
   border: 1px solid #3a5a1a;
@@ -540,7 +534,7 @@ body {
   color: #c8e0a8;
 }
 
-/* ===== AGENDAR ===== */
+/*  AGENDAR  */
 .form-agendar {
   background: rgba(0,0,0,0.4);
   border: 1px solid #3a5a1a;
@@ -622,7 +616,7 @@ body {
   color: #fde68a;
 }
 
-/* ===== HISTÓRICO ===== */
+/* HISTÓRICO */
 .lista-agendamentos {
   display: flex;
   flex-direction: column;
@@ -700,7 +694,7 @@ body {
   gap: 5px;
 }
 
-/* ===== RESPONSIVO ===== */
+/* RESPONSIVO */
 @media (max-width: 600px) {
   .titulo {
     font-size: 18px;

@@ -1,10 +1,4 @@
-// ============================================
-// SISTEMA DE REFEIÇÕES - 2º GAC ITU/SP
-// Arquivo: script.js
-// Linguagem: JavaScript puro
-// ============================================
-
-// ===== DADOS DAS REFEIÇÕES =====
+// = DADOS DAS REFEIÇÕES =
 const REFEICOES = {
   cafe: { nome: 'Café da Manhã', horario: '06:00 - 07:30', icon: '☕' },
   almoco: { nome: 'Almoço', horario: '11:30 - 13:00', icon: '🍽️' },
@@ -12,14 +6,12 @@ const REFEICOES = {
   ceia: { nome: 'Ceia', horario: '21:00 - 22:00', icon: '🌙' }
 };
 
-// ===== ESTADO DA APLICAÇÃO =====
+// ESTADO DA APLICAÇÃO 
 let usuarioAtual = null;
 let bateriaSelecionada = '1ª BO';
 let refeicoesSelecionadas = [];
 
-// ============================================
 // INICIALIZAÇÃO - Quando a página carrega
-// ============================================
 window.onload = function() {
   verificarSessao();
   // Define data mínima do agendamento como hoje
@@ -28,9 +20,7 @@ window.onload = function() {
   document.getElementById('agendar-data').value = hoje;
 };
 
-// ============================================
 // SISTEMA DE TELAS
-// ============================================
 function mostrarTela(idTela) {
   // Esconde todas as telas
   document.querySelectorAll('.tela').forEach(t => t.classList.add('hidden'));
@@ -39,9 +29,7 @@ function mostrarTela(idTela) {
   window.scrollTo(0, 0);
 }
 
-// ============================================
 // SISTEMA DE MENSAGENS (TOAST)
-// ============================================
 function mostrarMensagem(texto, tipo) {
   const toast = document.getElementById('toast');
   toast.textContent = (tipo === 'sucesso' ? '✓ ' : '✕ ') + texto;
@@ -53,9 +41,7 @@ function mostrarMensagem(texto, tipo) {
   }, 3500);
 }
 
-// ============================================
 // SISTEMA DE ARMAZENAMENTO (localStorage)
-// ============================================
 function salvarDado(chave, valor) {
   localStorage.setItem(chave, JSON.stringify(valor));
 }
@@ -80,9 +66,7 @@ function listarChaves(prefixo) {
   return chaves;
 }
 
-// ============================================
 // SESSÃO - Verificar se já está logado
-// ============================================
 function verificarSessao() {
   const sessao = buscarDado('sessao_ativa');
   if (sessao && sessao.id) {
@@ -97,9 +81,7 @@ function verificarSessao() {
   mostrarTela('tela-login');
 }
 
-// ============================================
 // CADASTRO
-// ============================================
 function selecionarBateria(bateria) {
   bateriaSelecionada = bateria;
   document.querySelectorAll('.bateria-btn').forEach(btn => {
@@ -160,9 +142,7 @@ function fazerCadastro() {
   carregarDashboard();
 }
 
-// ============================================
 // LOGIN
-// ============================================
 function fazerLogin() {
   const identificador = document.getElementById('input-login').value.trim().toUpperCase();
 
@@ -194,9 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// ============================================
 // LOGOUT
-// ============================================
 function logout() {
   deletarDado('sessao_ativa');
   usuarioAtual = null;
@@ -204,9 +182,7 @@ function logout() {
   mostrarTela('tela-login');
 }
 
-// ============================================
 // DASHBOARD
-// ============================================
 function carregarDashboard() {
   if (!usuarioAtual) return;
 
@@ -252,9 +228,8 @@ function formatarData(dataStr) {
   return partes[2] + '/' + partes[1] + '/' + partes[0];
 }
 
-// ============================================
+
 // AGENDAR
-// ============================================
 function abrirAgendar() {
   document.getElementById('header-agendar-sub').textContent = usuarioAtual.id;
   refeicoesSelecionadas = [];
@@ -310,9 +285,7 @@ function salvarAgendamento() {
   carregarHistorico();
 }
 
-// ============================================
 // HISTÓRICO
-// ============================================
 function carregarHistorico() {
   document.getElementById('header-historico-sub').textContent = usuarioAtual.id;
   const agendamentos = buscarAgendamentos();

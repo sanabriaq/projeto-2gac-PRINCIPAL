@@ -78,7 +78,7 @@
           <button type="button" class="bateria-btn ativo" data-bateria="1ª BO" onclick="selecionarBateria('1ª BO')">1ª BO</button>
           <button type="button" class="bateria-btn" data-bateria="2ª BO" onclick="selecionarBateria('2ª BO')">2ª BO</button>
           <button type="button" class="bateria-btn" data-bateria="3ª BM" onclick="selecionarBateria('3ª BM')">3ª BM</button>
-          <button type="button" class="bateria-btn" data-bateria="BC" onclick="selecionarBateria('BC')">BC</button>
+          <button type="button" class="bateria-btn" data-bateria="BC" onclick="selecionarBateria('BC')">BC/EM</button>
         </div>
 
         <label class="label">NOME DE GUERRA</label>
@@ -95,9 +95,7 @@
     </div>
   </div>
 
-  <!-- ============================================ -->
-  <!-- DASHBOARD                                    -->
-  <!-- ============================================ -->
+  <!--DASHBOARD-->
   <div id="tela-dashboard" class="tela app-container hidden">
     <header class="header">
       <div class="header-left">
@@ -144,10 +142,9 @@
       <div id="lista-proximas"></div>
     </div>
   </div>
-
-  <!-- ============================================ -->
-  <!-- TELA DE AGENDAR                              -->
-  <!-- ============================================ -->
+ 
+  <!--TELA DE AGENDAR-->
+  
   <div id="tela-agendar" class="tela app-container hidden">
     <header class="header">
       <div class="header-left">
@@ -171,7 +168,7 @@
         <button class="refeicao-card" data-refeicao="cafe" onclick="toggleRefeicao('cafe')">
           <div class="refeicao-icon">☕</div>
           <div class="refeicao-nome">Café da Manhã</div>
-          <div class="refeicao-horario">06:00 - 07:30</div>
+          <div class="refeicao-horario">05:30 - 07:30</div>
           <div class="check-badge hidden">✓</div>
         </button>
         <button class="refeicao-card" data-refeicao="almoco" onclick="toggleRefeicao('almoco')">
@@ -183,13 +180,13 @@
         <button class="refeicao-card" data-refeicao="janta" onclick="toggleRefeicao('janta')">
           <div class="refeicao-icon">🌅</div>
           <div class="refeicao-nome">Janta</div>
-          <div class="refeicao-horario">17:30 - 19:00</div>
+          <div class="refeicao-horario">17:00 - 18:30</div>
           <div class="check-badge hidden">✓</div>
         </button>
         <button class="refeicao-card" data-refeicao="ceia" onclick="toggleRefeicao('ceia')">
           <div class="refeicao-icon">🌙</div>
           <div class="refeicao-nome">Ceia</div>
-          <div class="refeicao-horario">21:00 - 22:00</div>
+          <div class="refeicao-horario">19:00 - 20:00</div>
           <div class="check-badge hidden">✓</div>
         </button>
       </div>
@@ -200,9 +197,8 @@
     </div>
   </div>
 
-  <!-- ============================================ -->
-  <!-- TELA DE HISTÓRICO                            -->
-  <!-- ============================================ -->
+  <!--TELA DE HISTÓRICO-->
+
   <div id="tela-historico" class="tela app-container hidden">
     <header class="header">
       <div class="header-left">
