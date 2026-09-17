@@ -11,8 +11,7 @@ projeto-2gac/
 ├── script.js       ← Lógica do sistema (JavaScript)
 └── img/
     └── 2_GAC.png   ← Brasão do quartel
-
- Como Executar
+   
 
 Forma 1 — Mais fácil:
 1. Dê **duplo clique** no arquivo `index.html`
