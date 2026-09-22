@@ -45,7 +45,7 @@ SD EV, SD EP, CB, 3º SGT, 2º SGT, 1º SGT, ST, ASP, 2º TEN, 1º TEN, CAP, MAJ
 
  Baterias
 
-1ª BO, 2ª BO, 3ª BM, BC
+1ª BO, 2ª BO, 3ª BM, BC/EM
 
  Armazenamento
 

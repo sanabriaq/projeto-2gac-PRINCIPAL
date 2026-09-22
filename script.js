@@ -14,6 +14,7 @@ let refeicoesSelecionadas = [];
 // INICIALIZAÇÃO - Quando a página carrega
 window.onload = function() {
   verificarSessao();
+
   // Define data mínima do agendamento como hoje
   const hoje = new Date().toISOString().split('T')[0];
   document.getElementById('agendar-data').min = hoje;
@@ -36,8 +37,8 @@ function mostrarMensagem(texto, tipo) {
   toast.className = 'toast ' + tipo;
   toast.classList.remove('hidden');
 
-  setTimeout(() => {
-    toast.classList.add('hidden');
+  setTimeout(() => { // Oculta o toast após 3,5 segundos
+    toast.classList.add('hidden'); 
   }, 3500);
 }
 
