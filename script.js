@@ -1,4 +1,4 @@
-// = DADOS DAS REFEIÇÕES =
+// DADOS DAS REFEIÇÕES 
 const REFEICOES = {
   cafe: { nome: 'Café da Manhã', horario: '06:00 - 07:30', icon: '☕' },
   almoco: { nome: 'Almoço', horario: '11:30 - 13:00', icon: '🍽️' },
@@ -12,7 +12,7 @@ let bateriaSelecionada = '1ª BO';
 let refeicoesSelecionadas = [];
 
 // INICIALIZAÇÃO - Quando a página carrega
-window.onload = function() {
+window.onload = function () {
   verificarSessao();
 
   // Define data mínima do agendamento como hoje
@@ -38,7 +38,7 @@ function mostrarMensagem(texto, tipo) {
   toast.classList.remove('hidden');
 
   setTimeout(() => { // Oculta o toast após 3,5 segundos
-    toast.classList.add('hidden'); 
+    toast.classList.add('hidden');
   }, 3500);
 }
 
@@ -166,10 +166,10 @@ function fazerLogin() {
 }
 
 // Permite logar apertando Enter
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const inputLogin = document.getElementById('input-login');
   if (inputLogin) {
-    inputLogin.addEventListener('keypress', function(e) {
+    inputLogin.addEventListener('keypress', function (e) {
       if (e.key === 'Enter') fazerLogin();
     });
   }
@@ -228,7 +228,6 @@ function formatarData(dataStr) {
   const partes = dataStr.split('-');
   return partes[2] + '/' + partes[1] + '/' + partes[0];
 }
-
 
 // AGENDAR
 function abrirAgendar() {
