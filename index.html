@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2º GAC - Sistema de Refeições</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconnect para otimizar o carregamento da fonte -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconnect para otimizar o carregamento da fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet"> <!-- Fonte Rajdhani para o estilo do texto -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preconnect para otimizar o carregamento da fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Fonte Rajdhani para o estilo do texto -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="img/2_GAC.png">
 </head>
-<body> 
+
+<body>
 
   <!-- Fundo com padrão militar -->
   <div class="bg-pattern"></div>
@@ -19,7 +23,7 @@
   <div id="toast" class="toast hidden"></div>
 
   <!-- TELA DE LOGIN-->
-   
+
   <div id="tela-login" class="tela auth-container">
     <div class="auth-card">
       <div class="emblema-hero">
@@ -78,9 +82,12 @@
 
         <label class="label">BATERIA</label>
         <div class="bateria-grid">
-          <button type="button" class="bateria-btn ativo" data-bateria="1ª BO" onclick="selecionarBateria('1ª BO')">1ª BO</button>
-          <button type="button" class="bateria-btn" data-bateria="2ª BO" onclick="selecionarBateria('2ª BO')">2ª BO</button>
-          <button type="button" class="bateria-btn" data-bateria="3ª BM" onclick="selecionarBateria('3ª BM')">3ª BM</button>
+          <button type="button" class="bateria-btn ativo" data-bateria="1ª BO" onclick="selecionarBateria('1ª BO')">1ª
+            BO</button>
+          <button type="button" class="bateria-btn" data-bateria="2ª BO" onclick="selecionarBateria('2ª BO')">2ª
+            BO</button>
+          <button type="button" class="bateria-btn" data-bateria="3ª BM" onclick="selecionarBateria('3ª BM')">3ª
+            BM</button>
           <button type="button" class="bateria-btn" data-bateria="BC" onclick="selecionarBateria('BC')">BC/EM</button>
         </div>
 
@@ -115,7 +122,7 @@
 
     <div class="card-usuario">
       <div class="avatar-usuario">
-        <span class="avatar-icon">👤</span> 
+        <span class="avatar-icon">👤</span>
       </div>
       <div class="usuario-info">
         <div class="boas-vindas">BEM-VINDO</div>
@@ -136,7 +143,7 @@
         <div class="menu-titulo">MEUS AGENDAMENTOS</div>
         <div id="contador-agendamentos" class="menu-desc">0 agendamento(s)</div>
       </button>
-    </div>   
+    </div>
 
     <div class="proximas-refeicoes">
       <div class="section-titulo">
@@ -145,9 +152,9 @@
       <div id="lista-proximas"></div>
     </div>
   </div>
- 
+
   <!--TELA DE AGENDAR-->
-  
+
   <div id="tela-agendar" class="tela app-container hidden">
     <header class="header">
       <div class="header-left">
@@ -221,4 +228,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
